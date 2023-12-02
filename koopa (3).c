@@ -540,7 +540,6 @@ int main() {
 
         /* now the arrow keys move the koopa */
         if (button_pressed(BUTTON_RIGHT)) {
-			if (!is_collision(koopa.x + 1, koopa.y, xscroll, yscroll, maze, maze_width, maze_height)){
             if (koopa_right(&koopa)) {
 				if (xscroll >= 300){
 				
@@ -549,9 +548,7 @@ int main() {
 				xscroll++;
 				}
             }
-		}
         } else if (button_pressed(BUTTON_LEFT)) {
-			if (!is_collision(koopa.x + 1, koopa.y, xscroll, yscroll, maze, maze_width, maze_height)){
             if (koopa_left(&koopa)) {
 				if (xscroll <= -24){
 				
@@ -560,9 +557,7 @@ int main() {
 				xscroll--;
 				}
             }
-		}
        } else if (button_pressed(BUTTON_UP)) {
-		   if (!is_collision(koopa.x + 1, koopa.y, xscroll, yscroll, maze, maze_width, maze_height)){
             if (koopa_up(&koopa)) {
                if (yscroll <= -35){
 				
@@ -571,19 +566,15 @@ int main() {
 				yscroll--;
 				}
            }
-		  }
+
 		} else if (button_pressed(BUTTON_DOWN)) {
-			if (!is_collision(koopa.x + 1, koopa.y, xscroll, yscroll, maze, maze_width, maze_height)){
             if (koopa_down(&koopa)) {
 				if (yscroll >= 470){
 				
 				}else{
 				yscroll++;
 				}
-            } else {
-			koopa_stop(&koopa);
-				}
-			}
+            }  
         }
 		
         /* wait for vblank before scrolling and moving sprites */
